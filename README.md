@@ -40,7 +40,7 @@ This project helps you add, complete, and delete tasks easily.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/todo-list.git
+   git clone https://github.com/sangeetha10122003/todo-list
    ```
 2. Open `index.html` in your browser.
 3. Start adding your tasks!
