@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>my to do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>My todo List</h1>
+    <input type="text" id="text">
+    <button onclick="add()">add task</button>
+    <ul id="item">
+
+    </ul>
+</body>
+
+</html>
+<script>
+    var input = document.getElementById("text");
+    var ul = document.getElementById("item");
+
+    function add() {
+        if (input.value.trim() === "") {
+            alert("Please enter a task!");
+            return;
+        }
+
+        var list = document.createElement("li");
+        list.textContent = input.value;
+
+
+        list.onclick = function () {
+            list.classList.toggle("completed");
+        };
+
+
+        var delBtn = document.createElement("button");
+        delBtn.textContent = "❌";
+        delBtn.style.marginLeft = "10px";
+        delBtn.onclick = function (event) {
+            event.stopPropagation();
+            ul.removeChild(list);
+        };
+
+        list.appendChild(delBtn);
+        ul.appendChild(list);
+
+        input.value = "";
+    }
+
+</script>
